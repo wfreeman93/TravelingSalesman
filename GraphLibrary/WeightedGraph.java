@@ -39,6 +39,10 @@ public void addVertex(E vertex) {
     map.put(vertex, new ArrayList<Edge>());
 }
 
+public void removeVertex(E vertex) {
+    map.remove(vertex);
+}
+
 
 //Adds an edge. If either the source edge(from) or the destination(to) vertex is not found in the hashmap, it is created using addVertex with the required one
 //Once that step is done or not needed, we add the specific edge to the specific vertex(from).
@@ -71,6 +75,10 @@ public void addEdge(E from, E to, boolean directed, int cost) {
     if(directed == false) {
         map.get(to).add(new Edge(from, cost));
     }
+}
+
+public void removeEdge(E from, int index) {
+        map.get(from).remove(index);
 }
 
 

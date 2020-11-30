@@ -7,13 +7,14 @@ public class WeightedGraph<E> {
 
     //our main hashmap. E represents our vertices, the arraylist represents our list of edges.
     //The arraylist takes an edge object, which will in turn have vertices representing edges, as well as costs if the graph is weighted.
-private Map<E, ArrayList<Edge>> map = new HashMap<>();
+private HashMap<E, ArrayList<Edge>> map = new HashMap<>();
 
 
 //Our edge, which was needed to be able to keep track of weighted costs
 public static class Edge<G> {
     G data;
     int cost;
+    boolean visited = false;
 
     //constructor for our edge object
     //FIXED!: unsure of how else to switch between weighted and unweighted without using a seperate edge object, to store both the edge data and the cost
@@ -103,18 +104,28 @@ public String toString() {
     s = map.toString();
     return s;
 }
-
-
-
-
-    public static void main(String[] args) throws Exception {
-        WeightedGraph<String> test = new WeightedGraph<>();
-        test.addEdge("TestFrom1", "Test1End", true, 5);
-        test.addEdge("TestFrom2", "Test2End", true, 7) ;
-        System.out.println(test.getEdges("TestFrom1"));
-        System.out.println(test.getVertices());
-        System.out.println(test);
+public boolean containsKey(E item) {
+    if(map.containsKey(item)) {
+        return true;
     }
+    return false;
+}
+
+public Set<E> keySet() {
+    return map.keySet();
+}
+
+
+
+
+    // public static void main(String[] args) throws Exception {
+    //     WeightedGraph<String> test = new WeightedGraph<>();
+    //     test.addEdge("TestFrom1", "Test1End", true, 5);
+    //     test.addEdge("TestFrom2", "Test2End", true, 7) ;
+    //     System.out.println(test.getEdges("TestFrom1"));
+    //     System.out.println(test.getVertices());
+    //     System.out.println(test);
+    // }
 
 
 

@@ -90,14 +90,14 @@ public String toString() {
 
 
 
-    public static void main(String[] args) throws Exception {
-        UnweightedGraph<String> test = new UnweightedGraph<>();
-        test.addEdge("TestFromOne", "TestTo", true);
-        test.addEdge("TestFrom", "TestSecond", true) ;
-        System.out.println(test.getEdges("TestFrom"));
-        System.out.println(test.getVertices());
-        System.out.println(test);
-    }
+    // public static void main(String[] args) throws Exception {
+    //     UnweightedGraph<String> test = new UnweightedGraph<>();
+    //     test.addEdge("TestFromOne", "TestTo", true);
+    //     test.addEdge("TestFrom", "TestSecond", true) ;
+    //     System.out.println(test.getEdges("TestFrom"));
+    //     System.out.println(test.getVertices());
+    //     System.out.println(test);
+    // }
 
 
 
